@@ -2,7 +2,7 @@ NAME = ex00
 
 CXX = c++ -g
 
-SRCS = tests.cpp Account.cpp
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJS = $(addprefix ./, $(SRCS:.cpp=.o))
 
@@ -20,7 +20,7 @@ cppformat:
 	clang-format -i $(SRCS) *.hpp
 
 cpplint:
-	clang-tidy-12 --config-file=.clang-tidy --warnings-as-errors=* --quiet Account.cpp -- -Wall -Wextra -Werror -std=c++98
+	clang-tidy-12 --config-file=.clang-tidy --warnings-as-errors=* --quiet $(SRCS) -- -Wall -Wextra -Werror -std=c++98
 
 clean:
 	rm -f $(OBJS)
