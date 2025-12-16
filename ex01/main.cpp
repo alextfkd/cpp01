@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:31:35 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/16 13:59:33 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/16 19:34:10 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
   Zombie *zombies = zombieHorde(4, "ugougo");
   int     idx     = 0;
   while (idx < 4) {
+    std::cout << "index: " << idx << std::endl;
     zombies[idx].announce();
     idx++;
   }
