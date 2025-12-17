@@ -6,32 +6,31 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:35:38 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/16 19:58:40 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/17 00:42:32 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <string>
 
-int main(void) {
-  std::string  greetings = "HI THIS IS BRAIN";
-  std::string* stringPTR = &greetings;
-  std::string& stringREF = greetings;
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-  std::cout << "Starting demo for cpp01/ex02." << std::endl;
-
-  std::cout << "greetings:  " << greetings << std::endl;
-
-  std::cout << "Printing out each memory address of the variables." << greetings
-            << std::endl;
-  std::cout << "- &greetings: " << &greetings << std::endl;
-  std::cout << "- stringPTR:  " << stringPTR << std::endl;
-  std::cout << "- &stringREF: " << &stringREF << std::endl;
-  std::cout << "Printing out each values of the variables." << greetings
-            << std::endl;
-  std::cout << "- greetings:  " << greetings << std::endl;
-  std::cout << "- *stringPTR: " << *stringPTR << std::endl;
-  std::cout << "- stringREF:  " << stringREF << std::endl;
-  std::cout << "Demo for cpp01/ex02 is over." << std::endl;
+int main() {
+  {
+    Weapon club = Weapon("crude spiked club");
+    HumanA bob("Bob", club);
+    bob.attack();
+    club.setType("some other type of club");
+    bob.attack();
+  }
+  {
+    Weapon club = Weapon("crude spiked club");
+    HumanB jim("Jim");
+    jim.setWeapon(club);
+    jim.attack();
+    club.setType("some other type of club");
+    jim.attack();
+  }
   return (0);
 }
