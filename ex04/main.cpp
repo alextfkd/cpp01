@@ -6,14 +6,11 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 02:47:46 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/18 07:05:01 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/18 07:09:34 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <string>
+#include "ex04.hpp"
 
 static void RaiseArgcErr(void);
 static bool Infile2String(const std::string& infile, std::string& dest);
