@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:08:27 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/18 02:34:06 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/18 03:01:29 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ Zombie::~Zombie() { std::cout << this->name << " is destroyed." << std::endl; }
 
 // private:
 // std::string name;  // NO LINT
-Zombie::Zombie(const Zombie& other) {
-  if (this != &other) {
-    this->name = other.name;
-  }
-}  // NOLINT
+Zombie::Zombie(const Zombie& other) { this->name = other.name; }  // NOLINT
 
 Zombie& Zombie::operator=(const Zombie& other) {
   if (this != &other) {
