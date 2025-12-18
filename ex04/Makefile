@@ -1,4 +1,4 @@
-NAME = ex04
+NAME = ft_sed
 
 CXX = c++ -g
 

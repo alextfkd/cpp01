@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 02:47:46 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/18 07:09:34 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/18 08:36:36 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ static void FtReplace(std::string& content, const std::string& target,
   size_t idx;
   size_t target_start;
 
+  if (target.empty()) {
+    return;
+  }
   idx = 0;
   while (content[idx]) {
     target_start = content.find(target, idx);
@@ -82,7 +85,7 @@ static void FtReplace(std::string& content, const std::string& target,
     }
     content.erase(target_start, target.length());
     content.insert(target_start, insert);
-    idx += insert.length();
+    idx = target_start + insert.length();
   }
 }
 
