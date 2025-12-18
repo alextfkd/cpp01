@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:30:20 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/18 12:06:43 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/18 12:16:41 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void Harl::complain(std::string level) {  // NOLINT
   for (int idx = 0; idx < Harl::kNumLevels; idx++) {
     if (levels[idx] == level) {
       (this->*says[idx])();
+      return;
     }
   }
+  std::cout << "..." << std::endl;
 }
