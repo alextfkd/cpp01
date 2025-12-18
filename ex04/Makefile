@@ -17,10 +17,10 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 cppformat:
-	clang-format -i $(SRCS) 
+	clang-format -i $(SRCS) *.hpp
 
 cpplint:
-	clang-tidy --config-file=.clang-tidy --warnings-as-errors=* --quiet $(SRCS) -- -Wall -Wextra -Werror -std=c++98
+	clang-tidy --config-file=.clang-tidy --warnings-as-errors=* --quiet $(SRCS) *.hpp -- -Wall -Wextra -Werror -std=c++98
 
 clean:
 	rm -f $(OBJS)
