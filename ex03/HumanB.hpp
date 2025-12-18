@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:05:27 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/17 01:57:48 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/18 03:59:34 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class HumanB {
  private:
   std::string name_;
   Weapon*     weapon_;
+  HumanB(const HumanB& other);
+  HumanB& operator=(const HumanB& other);
 
  public:
   HumanB(const std::string& name);

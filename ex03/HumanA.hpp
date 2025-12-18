@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:05:33 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/17 01:57:51 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/18 03:54:40 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class HumanA {
  private:
   std::string name_;
   Weapon&     weapon_;
+  HumanA(const HumanA& other);
+  HumanA& operator=(const HumanA& other);
 
  public:
   HumanA(const std::string& name, Weapon& weapon);
