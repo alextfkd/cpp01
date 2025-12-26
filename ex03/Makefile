@@ -17,7 +17,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 cppformat:
-	clang-format -i $(SRCS) *.hpp
+	clang-format -i $(SRCS) *.hpp HumanB.hpp
 
 cpplint:
 	clang-tidy --config-file=.clang-tidy --warnings-as-errors=* --quiet $(SRCS) *.hpp -- -Wall -Wextra -Werror -std=c++98
