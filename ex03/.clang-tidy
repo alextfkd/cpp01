@@ -25,6 +25,7 @@ Checks: >
   performance-*,
   -modernize-*,  # using C++98
   readability-identifier-naming,
+  clang-diagnostic-newline-eof,
   cppcoreguidelines-special-member-functions,
   -readability-implicit-bool-conversion,
   -readability-braces-around-statements
