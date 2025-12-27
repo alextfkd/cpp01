@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 10:37:40 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/18 02:26:43 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/27 10:58:31 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 #include <string>
 
 class Zombie {
+ private:
+  std::string name;  // NO LINT
+
  public:
   void announce(void) const;
-  void SetName(const std::string& name);
+  void setName(const std::string& name);
   Zombie(const std::string& name);
   Zombie(const Zombie& other);
   Zombie& operator=(const Zombie& other);
   ~Zombie();
-
- private:
-  std::string name;  // NO LINT
 };
 
 Zombie* newZombie(std::string name);  // NO LINT

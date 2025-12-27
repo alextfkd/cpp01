@@ -6,17 +6,17 @@
 /*   By: tkatsuma <tkatsuma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 02:47:46 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/12/18 08:36:36 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/12/27 11:00:33 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ex04.hpp"
 
-static void RaiseArgcErr(void);
-static bool Infile2String(const std::string& infile, std::string& dest);
-static void FtReplace(std::string& content, const std::string& target,
+static void raiseArgcErr(void);
+static bool infile2String(const std::string& infile, std::string& dest);
+static void ftReplace(std::string& content, const std::string& target,
                       const std::string& insert);
-static bool String2Outfile(const std::string& content, std::string& outfile);
+static bool string2Outfile(const std::string& content, std::string& outfile);
 
 /*
 You must create and turn in your own tests to ensure that your program works
@@ -24,7 +24,7 @@ as expected.
 */
 int main(int argc, char* argv[]) {
   if (argc != 4) {
-    RaiseArgcErr();
+    raiseArgcErr();
     return (1);
   }
   std::string infile  = argv[1];
@@ -33,22 +33,22 @@ int main(int argc, char* argv[]) {
   std::string insert  = argv[3];
   std::string content;
 
-  if (!Infile2String(infile, content)) {
+  if (!infile2String(infile, content)) {
     return (1);
   }
-  FtReplace(content, target, insert);
-  if (!String2Outfile(content, outfile)) {
+  ftReplace(content, target, insert);
+  if (!string2Outfile(content, outfile)) {
     return (1);
   }
   return 0;
 }
 
-static void RaiseArgcErr(void) {
+static void raiseArgcErr(void) {
   std::cerr << "Error: Invalid arguments. Usage: ./ft_sed [filename] [s1] [s2]"
             << std::endl;
 }
 
-static bool Infile2String(const std::string& infile, std::string& dest) {
+static bool infile2String(const std::string& infile, std::string& dest) {
   const std::string kErrEmptyInfile = "Error: infile is empty.";
   const std::string kErrOpenFile    = "Error: cannot open file.";
 
@@ -69,7 +69,7 @@ static bool Infile2String(const std::string& infile, std::string& dest) {
   return true;
 }
 
-static void FtReplace(std::string& content, const std::string& target,
+static void ftReplace(std::string& content, const std::string& target,
                       const std::string& insert) {
   size_t idx;
   size_t target_start;
@@ -89,7 +89,7 @@ static void FtReplace(std::string& content, const std::string& target,
   }
 }
 
-static bool String2Outfile(const std::string& content, std::string& outfile) {
+static bool string2Outfile(const std::string& content, std::string& outfile) {
   const std::string kErrOpenFile = "Error: cannot open file.";
 
   std::ofstream fout(outfile.c_str());
